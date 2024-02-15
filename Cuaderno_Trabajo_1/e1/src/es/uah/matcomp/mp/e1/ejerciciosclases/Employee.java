@@ -32,7 +32,11 @@ public class Employee {
     public int getAnnualSalary(){
         return salary*12;
     }
-    public int raiseSalary(int percent){
-        this.
+    public double raiseSalary(double percent){
+        //El porcentaje de aumento salarial debe ser un double, no se pueden usar porcentajes sin decimales
+        return salary+percent*0.01*salary;
+    }
+    public String toString(){
+        return "Employee [id="+id+", name="+firstName+" "+lastName+" salary="+salary+"]";
     }
 }

@@ -1,3 +1,5 @@
+package Mains;
+
 import es.uah.matcomp.mp.e1.ejerciciosclases.Rectangle;
 
 public class MainRectangle {
