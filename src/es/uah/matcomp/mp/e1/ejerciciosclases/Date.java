@@ -19,13 +19,13 @@ public class Date {
         return year;
     }
     public void setDay(int myDay){
-        day=myDay;
+        this.day=myDay;
     }
     public void setMonth(int myMonth){
-        month=myMonth;
+        this.month=myMonth;
     }
     public void setYear(int myYear){
-        year=myYear;
+        this.year=myYear;
     }
     public void setDate(int myDay, int myMonth, int myYear){
         year=myYear;
@@ -33,6 +33,9 @@ public class Date {
         day=myDay;
     }
     public String toString(){
-        return day+"/"+month+"/"+year;
+        String d=String.format("%02d", day);
+        String m=String.format("%02d", month);
+        String y=String.format("%04d", year);
+        return d+"/"+m+"/"+y;
     }
 }

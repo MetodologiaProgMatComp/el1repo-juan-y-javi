@@ -22,25 +22,23 @@ public class Account {
     public int getBalance(){
         return balance;
     }
-    public void addBalance(int amount){
-        this.balance+=amount;
-    }
     public int credit(int amount){
-        return balance+amount;
+        this.balance+=amount;
+        return this.balance;
     }
     public int debit(int amount){
         if (amount<=balance)
-                balance=balance-amount;
+            this.balance-=amount;
         else System.out.println("Amount exceeded balance");
-        return balance;
+        return this.balance;
     }
     public int transferTo(Account another, int amount){
         if (amount<=balance) {
-             balance=balance-amount;
-             another.addBalance(amount);
+             this.balance-=amount;
+             another.credit(amount);
         }
         else {System.out.println("Amount exceeded balance");}
-        return balance;
+        return another.credit(amount);
     }
     public String toString(){
         return "Account[id="+id+", name="+name+", balance="+balance+"]";
