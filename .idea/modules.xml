@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cuaderno_Trabajo_1/e1/e1.iml" filepath="$PROJECT_DIR$/Cuaderno_Trabajo_1/e1/e1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/el1repo-juan-y-javi.iml" filepath="$PROJECT_DIR$/.idea/el1repo-juan-y-javi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cuaderno_Trabajo_1/e1/test/test.iml" filepath="$PROJECT_DIR$/Cuaderno_Trabajo_1/e1/test/test.iml" />
+    </modules>
+  </component>
+</project>
