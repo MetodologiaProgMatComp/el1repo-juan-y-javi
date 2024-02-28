@@ -4,50 +4,62 @@ public class Book {
     private Author[] authors;
     private double price;
     private int qty;
-    public Book (String n, Author[] a, double p){
-        name=n;
-        authors=a;
-        price=p;
+
+    public Book(String n, Author[] a, double p) {
+        name = n;
+        authors = a;
+        price = p;
     }
-    public Book (String n, Author[] a, double p, int q){
-        name=n;
-        authors=a;
-        price=p;
-        qty=q;
+
+    public Book(String n, Author[] a, double p, int q) {
+        name = n;
+        authors = a;
+        price = p;
+        qty = q;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public Author[] getAuthors(){
+
+    public Author[] getAuthors() {
         return authors;
     }
-    public double getPrice(){
+
+    public double getPrice() {
         return price;
     }
-    public void setPrice(double myPrice){
-        this.price=myPrice;
+
+    public void setPrice(double myPrice) {
+        this.price = myPrice;
     }
-    public int getQty(){
+
+    public int getQty() {
         return qty;
     }
-    public void setQty(int myQty){
-        this.qty=myQty;
+
+    public void setQty(int myQty) {
+        this.qty = myQty;
     }
+
     public String getAuthorName() {
-        return authors.getName();
+        String autores = "";
+        for (int i = 0; authors[i] != null; i++) {
+            autores = new StringBuilder().append(authors[i].getName()).toString();
+        }
+        return autores;
     }
-    public String getAuthorEmail() {
+}
+    /**public String getAuthorEmail() {
         return authors.getEmail();
     }
     public  char getAuthorGender() {
         return authors.getGender();
     }
+
     public String toString(){
-        StringBuilder Authors= new StringBuilder();
-        for (int )
-        Authors.append[i]
         return "Book[name="+name+", Author[name="+getAuthorName()+", email="+getAuthorEmail()+
                 ", gender="+getAuthorGender()+"], price="+price+", qty="+qty;
     }
 }
-
+*/

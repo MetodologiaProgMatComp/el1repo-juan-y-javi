@@ -34,9 +34,9 @@ public class Invoice {
         return customer.getDiscount();
     }
     public double getAmountAfterDiscount(){
-        return amount*getCustomerDiscount()*0.01;
+        return amount-amount*getCustomerDiscount()*0.01;
     }
     public String toString(){
-        return "Invoice[id="+id+", customer"+customer.toString()+", amount"+getAmountAfterDiscount();
+        return "Invoice[id="+id+", customer"+customer.toString()+", amount="+amount+"]";
     }
 }

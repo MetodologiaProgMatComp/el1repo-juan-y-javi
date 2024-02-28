@@ -1,6 +1,7 @@
+/**
 package es.uah.matcomp.ed.listas.listaSimple; /**
  * Programa principal de prueba
- */
+
 import es.uah.matcomp.ed.lineales.lista.simple.*;
 import es.uah.matcomp.ed.listas.listaSimple.clases.ElementoLS;
 import es.uah.matcomp.ed.listas.listaSimple.clases.ListaSimple;
@@ -19,3 +20,4 @@ public class main {
 
     }
 }
+*/
