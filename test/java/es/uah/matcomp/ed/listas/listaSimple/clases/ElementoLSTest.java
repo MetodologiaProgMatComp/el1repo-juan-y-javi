@@ -1,13 +1,11 @@
-package es.uah.matcomp.ed.listas.listaSimple;
-
-import es.uah.matcomp.ed.listas.listaSimple.clases.ElementoLS;
-
-import static org.junit.jupiter.api.Assertions.*;
+package es.uah.matcomp.ed.listas.listaSimple.clases;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 class ElementoLSTest {
+
     @Test
     void getData() {
         ElementoLS j = new ElementoLS();
@@ -18,6 +16,6 @@ class ElementoLSTest {
     void setData() {
         ElementoLS j = new ElementoLS();
         assertDoesNotThrow(() -> j.setData("String de prueba"));
-        assertEquals("String de prueba", j.getData(), "El valor no se ha establecido correctamente");
+        assertEquals("String de prueba",j.getData(),"El valor del elemento no se ha establecido correctamente");
     }
 }

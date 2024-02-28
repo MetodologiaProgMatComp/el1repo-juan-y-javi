@@ -4,10 +4,11 @@ public class ElementoLS {
 
     private Object data;
 
-    public Object getData(){
+    public Object getData() {
         return this.data;
     }
-    public void setData(Object d){
-        this.data=d;
+
+    public void setData(Object d) {
+        this.data = d;
     }
 }
