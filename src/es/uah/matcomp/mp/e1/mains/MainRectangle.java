@@ -1,4 +1,4 @@
-package Mains;
+package es.uah.matcomp.mp.e1.mains;
 
 import es.uah.matcomp.mp.e1.ejerciciosclases.Rectangle;
 

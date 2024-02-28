@@ -1,4 +1,4 @@
-package Mains;
+package es.uah.matcomp.mp.e1.mains;
 import es.uah.matcomp.mp.e1.ejerciciosclases.Time;
 public class MainTime {
     public static void main(String[] args) {
