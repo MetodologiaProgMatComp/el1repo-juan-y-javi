@@ -1,22 +1,22 @@
-package es.uah.matcomp.ed.listas.listaEnlazada.clases;
+package es.uah.matcomp.ed.listas.listaDoblementeEnlazada.clases;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ListaEnlazadaTest {
+class ListaDoblementeEnlazadaTest {
 
     @Test
     void isVacia() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         assertDoesNotThrow(() -> j.isVacia());
         assertEquals(true, j.isVacia(), "No se ha comprobado correctamente si la lista esta vacia");
     }
 
     @Test
     void vaciar() {
-        ListaEnlazada j = new ListaEnlazada();
-        ElementoLE i = new ElementoLE();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
+        ElementoLDE i = new ElementoLDE();
         j.add(i);
         assertDoesNotThrow(() -> j.vaciar());
         assertEquals(true, j.isVacia(), "La lista no se ha vaciado correctamente");
@@ -24,16 +24,17 @@ class ListaEnlazadaTest {
 
     @Test
     void add() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         Object test = 0;
         assertDoesNotThrow(() -> j.add(test));
+        assertDoesNotThrow(() -> j.add("Prueba"));
         j.add("test");
-        assertEquals(2, j.getNumeroElementos(), "No se han annadido el numero de elementos correcto");
+        assertEquals(3, j.getNumeroElementos(), "No se han annadido el numero de elementos correcto");
     }
 
     @Test
     void insert() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         Object test = 0;
         j.add("A");
         j.add("B");
@@ -50,7 +51,7 @@ class ListaEnlazadaTest {
 
     @Test
     void del() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         j.add("0");
         j.add("1");
         j.add("2");
@@ -58,15 +59,17 @@ class ListaEnlazadaTest {
         j.add("4");
         assertDoesNotThrow(() -> j.del(4));
         assertDoesNotThrow(() -> j.del(0));
-        assertDoesNotThrow(() -> j.del(2));
-        assertEquals("2", j.getElemento(1).getData(), "El elemento no ha sido eliminado correctamente");
+        assertDoesNotThrow(() -> j.del(1));
+        assertEquals("3", j.getElemento(1).getData(), "El elemento no ha sido eliminado correctamente");
+        assertEquals("1", j.getElemento(1).getAnterior().getData(), "El elemento no ha sido eliminado correctamente");
         assertEquals(1, j.del(1), "El numero de elementos restante no es correcto");
+        assertEquals("1",j.getUltimo().getData());
     }
 
     @Test
     void getNumeroElementos() {
-        ListaEnlazada j = new ListaEnlazada();
-        assertEquals(0,j.getNumeroElementos(),"Devuelve un numero distinto de 0 aun estando la lista vacia");
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
+        assertEquals(0, j.getNumeroElementos(), "El numero de elementos no es el esperado (la lista deberia estar vacia)");
         j.add("A");
         j.add("B");
         j.add("C");
@@ -76,10 +79,10 @@ class ListaEnlazadaTest {
 
     @Test
     void getPosicion() {
-        ListaEnlazada j = new ListaEnlazada();
-        assertNull(j.getUltimo(),"Devuelve una posicion valida aun estando la lista vacia");
-        ElementoLE i = new ElementoLE();
-        ElementoLE k = new ElementoLE();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
+        ElementoLDE i = new ElementoLDE();
+        assertEquals(-1,j.getPosicion(i),"Devuelve una posicion valida aun estando la lista vacia");
+        ElementoLDE k = new ElementoLDE();
         j.add("A");
         j.add("B");
         j.add(i);
@@ -90,9 +93,9 @@ class ListaEnlazadaTest {
 
     @Test
     void getPrimero() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         assertNull(j.getPrimero(),"Devuelve un elemento aun estando la lista vacia");
-        ElementoLE i = new ElementoLE();
+        ElementoLDE i = new ElementoLDE();
         j.add(i);
         j.add("B");
         j.add("C");
@@ -102,9 +105,9 @@ class ListaEnlazadaTest {
 
     @Test
     void getUltimo() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         assertNull(j.getUltimo(),"Devuelve un elemento aun estando la lista vacia");
-        ElementoLE i = new ElementoLE();
+        ElementoLDE i = new ElementoLDE();
         j.add("A");
         j.add("B");
         j.add(i);
@@ -114,8 +117,8 @@ class ListaEnlazadaTest {
 
     @Test
     void getSiguiente() {
-        ListaEnlazada j = new ListaEnlazada();
-        ElementoLE a = new ElementoLE();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
+        ElementoLDE a = new ElementoLDE();
         Object i = new Object();
         Object l = new Object();
         j.add (a);
@@ -127,7 +130,7 @@ class ListaEnlazadaTest {
 
     @Test
     void getElemento() {
-        ListaEnlazada j = new ListaEnlazada();
+        ListaDoblementeEnlazada j = new ListaDoblementeEnlazada();
         assertNull(j.getElemento(1),"Devuelve un elemento aun estando la lista vacia");
         j.add("A");
         j.add("B");

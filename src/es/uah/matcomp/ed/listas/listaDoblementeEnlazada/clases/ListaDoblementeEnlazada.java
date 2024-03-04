@@ -1,10 +1,12 @@
-package es.uah.matcomp.ed.listas.listaEnlazada.clases;
+package es.uah.matcomp.ed.listas.listaDoblementeEnlazada.clases;
 
-public class ListaEnlazada {
-    private ElementoLE primero;
+public class ListaDoblementeEnlazada {
+    private ElementoLDE primero;
+    private ElementoLDE ultimo;
 
-    public ListaEnlazada() {
+    public ListaDoblementeEnlazada() {
         this.primero = null;
+        this.ultimo = null;
     }
 
     public Boolean isVacia() {
@@ -13,73 +15,77 @@ public class ListaEnlazada {
 
     public void vaciar() {
         this.primero = null;
+        this.ultimo = null;
     }
 
-    protected int add(ElementoLE el) {
+    protected int add(ElementoLDE el) {
         int pos = 1;
         if (isVacia()) {
             this.primero = el;
+            this.ultimo = el;
             return 0;
         } else {
-            ElementoLE actual = this.primero;
-            while (actual.getSiguiente() != null) {
+            ElementoLDE actual = this.primero;
+            while (actual != this.ultimo) {
                 actual = actual.getSiguiente();
                 pos += 1;
             }
-            el.insertarmeEn(actual);
+            el.insertarmeEn(this.ultimo);
+            this.ultimo = el;
             return pos;
         }
     }
 
     public void add(String s) {
-        ElementoLE e = new ElementoLE();
+        ElementoLDE e = new ElementoLDE();
         e.setData(s);
         add(e);
     }
 
     public void add(Object o) {
-        ElementoLE e = new ElementoLE();
+        ElementoLDE e = new ElementoLDE();
         e.setData(o);
         add(e);
     }
 
     public void insert(Object o, int posicion) {
-        ElementoLE objeto = new ElementoLE();
+        ElementoLDE objeto = new ElementoLDE();
         objeto.setData(o);
-        objeto.insertarmeEn(getElemento(posicion-1));
+        objeto.insertarmeEn(getElemento(posicion - 1));
     }
 
     public void insert(String s, int posicion) {
-        ElementoLE objeto = new ElementoLE();
+        ElementoLDE objeto = new ElementoLDE();
         objeto.setData(s);
-        objeto.insertarmeEn(getElemento(posicion-1));
+        objeto.insertarmeEn(getElemento(posicion - 1));
     }
 
     public int del(int posicion) {
         if (posicion == 0) {
             this.primero = this.primero.getSiguiente();
-            return this.getNumeroElementos();
+            this.primero.setAnterior(null);
         } else {
-            ElementoLE actual = this.primero;
-            for (int i = 0; i != posicion - 1; i++) {
+            ElementoLDE actual = this.primero;
+            for (int i = 0; i != posicion ; i++) {
                 actual = actual.getSiguiente();
-                if (actual.getSiguiente().getSiguiente() == null) {
-                    actual.setSiguiente(null);
+                if (actual == this.ultimo) {
+                    this.ultimo = actual.getAnterior();
                     return this.getNumeroElementos();
                 }
             }
-            actual.setSiguiente(actual.getSiguiente().getSiguiente());
-            return this.getNumeroElementos();
+            actual.getSiguiente().setAnterior(actual.getAnterior());
+            actual.getAnterior().setSiguiente(actual.getSiguiente());
         }
+        return this.getNumeroElementos();
     }
 
     public int getNumeroElementos() {
         if (isVacia()) {
             return 0;
         } else {
-            int elms = 0;
-            ElementoLE actual = this.primero;
-            while (actual != null) {
+            int elms = 1;
+            ElementoLDE actual = this.primero;
+            while (actual != this.ultimo) {
                 elms += 1;
                 actual = actual.getSiguiente();
             }
@@ -87,10 +93,10 @@ public class ListaEnlazada {
         }
     }
 
-    public int getPosicion(ElementoLE el) {
+    public int getPosicion (ElementoLDE e){
         int pos = 0;
-        ElementoLE actual = this.primero;
-        while (actual != el) {
+        ElementoLDE actual = this.primero;
+        while (actual != e) {
             if (actual == null){
                 System.out.println("El elemento no pertenece a la lista");
                 return -1;
@@ -101,7 +107,7 @@ public class ListaEnlazada {
         return pos;
     }
 
-    public ElementoLE getPrimero() {
+    public ElementoLDE getPrimero() {
         if (isVacia()){
             return null;
         } else {
@@ -109,28 +115,24 @@ public class ListaEnlazada {
         }
     }
 
-    public ElementoLE getUltimo() {
+    public ElementoLDE getUltimo () {
         if (isVacia()){
             return null;
         } else {
-            ElementoLE actual = this.primero;
-            while (actual.getSiguiente() != null) {
-                actual = actual.getSiguiente();
-            }
-            return actual;
+            return this.ultimo;
         }
     }
 
-    public ElementoLE getSiguiente(ElementoLE el) {
+    public ElementoLDE getSiguiente (ElementoLDE el){
         return el.getSiguiente();
     }
 
-    public ElementoLE getElemento(int posicion) {
+    public ElementoLDE getElemento ( int posicion){
         if (isVacia()){
             System.out.println("La lista esta vacia, no contiene elementos");
             return null;
         } else {
-            ElementoLE actual = this.primero;
+            ElementoLDE actual = this.primero;
             for (int i = 0; i != posicion; i++) {
                 actual = actual.getSiguiente();
             }

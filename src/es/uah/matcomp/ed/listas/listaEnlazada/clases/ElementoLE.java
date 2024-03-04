@@ -4,14 +4,16 @@ public class ElementoLE {
     private Object data;
     private ElementoLE siguiente;
 
-    protected void insertarmeEn(ElementoLE el){
-        this.siguiente=el.siguiente;
-        el.siguiente=this;
+    protected void insertarmeEn(ElementoLE el) {
+        this.siguiente = el.siguiente;
+        el.siguiente = this;
     }
-    protected ElementoLE getSiguiente(){
+
+    protected ElementoLE getSiguiente() {
         return siguiente;
     }
-    protected void setSiguiente(ElementoLE el){
+
+    protected void setSiguiente(ElementoLE el) {
         this.siguiente = el;
     }
 

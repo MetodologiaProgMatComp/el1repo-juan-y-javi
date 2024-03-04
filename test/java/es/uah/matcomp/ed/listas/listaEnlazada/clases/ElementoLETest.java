@@ -14,7 +14,6 @@ class ElementoLETest {
         assertDoesNotThrow(() -> i.insertarmeEn(j));
         k.insertarmeEn(j);
         assertEquals(k,j.getSiguiente(),"El elemento siguiente a j no es el esperado");
-        assertEquals(j,i.getSiguiente(),"El elemento siguiente a i no es el esperado");
         assertEquals(i,k.getSiguiente(),"El elemento siguiente a k no es el esperado");
     }
 
@@ -23,6 +22,17 @@ class ElementoLETest {
         ElementoLE j = new ElementoLE();
         assertDoesNotThrow(() -> j.getSiguiente());
         assertNull(j.getSiguiente(),"El elemento siguiente no es el esperado");
+        ElementoLE i = new ElementoLE();
+        j.setSiguiente(i);
+        assertEquals(i,j.getSiguiente(),"El elemento siguiente no ha sido obtenido correctamente");
+    }
+
+    @Test
+    void setSiguiente() {
+        ElementoLE j = new ElementoLE();
+        ElementoLE i = new ElementoLE();
+        assertDoesNotThrow(() -> j.setSiguiente(i));
+        assertEquals(i,j.getSiguiente(),"El elemento siguiente no ha sido establecido correctamente");
     }
 
     @Test
