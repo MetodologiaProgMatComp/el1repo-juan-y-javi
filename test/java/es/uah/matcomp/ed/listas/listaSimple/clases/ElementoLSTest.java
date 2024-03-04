@@ -16,6 +16,6 @@ class ElementoLSTest {
     void setData() {
         ElementoLS j = new ElementoLS();
         assertDoesNotThrow(() -> j.setData("String de prueba"));
-        assertEquals("String de prueba",j.getData(),"El valor del elemento no se ha establecido correctamente");
+        assertEquals("String de prueba", j.getData(), "El valor del elemento no se ha establecido correctamente");
     }
 }
