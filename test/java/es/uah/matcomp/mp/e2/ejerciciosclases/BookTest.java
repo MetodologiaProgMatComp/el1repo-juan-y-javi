@@ -1,5 +1,7 @@
 package es.uah.matcomp.mp.e2.ejerciciosclases;
 
+import es.uah.matcomp.mp.e2.ejerciciosclases.e1.Author;
+import es.uah.matcomp.mp.e2.ejerciciosclases.e1.Book;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
