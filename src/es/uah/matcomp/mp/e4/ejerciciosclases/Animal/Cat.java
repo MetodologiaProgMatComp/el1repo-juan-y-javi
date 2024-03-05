@@ -4,6 +4,7 @@ public class Cat extends Animal{
     public Cat (String nam){
         super(nam);
     }
+    @Override
     public void greets(){
         System.out.println("Meow");
     }
