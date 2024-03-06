@@ -8,9 +8,9 @@ public class Circle implements GeometricObject{
 
     @Override
     public String toString() {
-        return "Circle{" +
+        return "Circle[" +
                 "radius=" + radius +
-                '}';
+                ']';
     }
     public double getArea(){
         return Math.PI*radius*radius;

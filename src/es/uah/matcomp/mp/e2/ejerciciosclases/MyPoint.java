@@ -41,10 +41,9 @@ public class MyPoint {
         return Math.sqrt((x*x)+(y*y));
     }
     public double distance(MyPoint another){
-        MyPoint j=new MyPoint();
-        j.setXY(another.x-x,another.y-y);
-        return Math.sqrt((j.getX()*j.getX())+
-                (j.getY()*j.getY()));
+        float xx = another.getX()-this.x;
+        float yy = another.getY()-this.y;
+        return Math.sqrt((xx*xx)+(yy*yy));
     }
     public double distance(){
         return Math.sqrt((x*x)+(y*y));

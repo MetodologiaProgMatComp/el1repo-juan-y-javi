@@ -8,10 +8,12 @@ public class ResizableCircle extends Circle implements Resize{
 
 
     public String toString() {
-        return "ResizableCircle{}";
+        return "ResizableCircle[Circle[" +
+                "radius=" + radius +
+                ']';
     }
     @Override
     public void resize(double percent){
-        radius*=percent/100;
+        radius+=radius*percent/100;
     }
 }

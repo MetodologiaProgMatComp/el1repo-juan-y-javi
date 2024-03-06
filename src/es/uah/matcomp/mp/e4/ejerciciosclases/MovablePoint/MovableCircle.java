@@ -9,14 +9,7 @@ public class MovableCircle extends MovablePoint implements Movable{
     }
 
     public String toString() {
-        return "MovableCircle{" +
-                "radius=" + radius +
-                ", center=" + center +
-                ", x=" + x +
-                ", y=" + y +
-                ", xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
-                '}';
+        return "("+x+","+y+") speed("+xSpeed+","+ySpeed+"), radius="+radius;
     }
 
     @Override

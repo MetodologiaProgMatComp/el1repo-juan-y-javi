@@ -11,32 +11,25 @@ public class Square extends Rectangle {
     }
     public double getSide(){
         Rectangle j=new Rectangle();
-        if (j.getLength()!=j.getWidth())System.out.println("No es un cuadrado");
-        return j.getLength();
+        if (length!=width)System.out.println("No es un cuadrado");
+        return length;
     }
     public void setSide(double side){
-        Rectangle j= new Rectangle();
-        j.setLength(side);
-        j.setWidth(side);
+       length=side;
+       width=side;
     }
     @Override
     public void setLength(double side){
-        Rectangle j= new Rectangle();
-        j.setLength(side);
+        length=side;
     }
     @Override
     public void setWidth(double side){
-        Rectangle j= new Rectangle();
-        j.setLength(side);
+        width=side;
     }
 
     @Override
     public String toString() {
-        return "Square{" +
-                "width=" + width +
-                ", length=" + length +
-                ", color='" + color + '\'' +
-                ", filled=" + filled +
-                '}';
+        return "Square[Rectangle[Shape[color=" +color+
+                ", filled="+filled+"], width="+width+", length="+length+"]]";
     }
 }
