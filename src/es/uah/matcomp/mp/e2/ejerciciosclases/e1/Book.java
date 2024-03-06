@@ -43,9 +43,8 @@ public class Book {
         this.qty = myQty;
     }
     public String toString(){
-        Author j=new Author();
-        return "Book[name="+name+", Author[name="+j.getName()+", email"+j.getEmail()+
-                ", gender="+j.getGender()+"], price"+price+", qty="+qty+"]";
+        return "Book[name="+name+", Author[name="+author.getName()+", email="+author.getEmail()+
+                ", gender="+author.getGender()+"], price="+price+", qty="+qty+"]";
     }
 }
 
