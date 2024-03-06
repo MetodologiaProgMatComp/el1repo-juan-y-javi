@@ -3,10 +3,13 @@ package es.uah.matcomp.mp.e3.ejerciciosclases.Shape;
 public class Shape {
     private String color;
     private boolean filled;
-    public Shape(){}
-    public Shape(String col, boolean fil){
-        color=col;
-        filled=fil;
+
+    public Shape() {
+    }
+
+    public Shape(String col, boolean fil) {
+        color = col;
+        filled = fil;
     }
 
     public String getColor() {
@@ -27,9 +30,9 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "Shape{" +
-                "color='" + color + '\'' +
+        return "Shape[" +
+                "color=" + color +
                 ", filled=" + filled +
-                '}';
+                ']';
     }
 }

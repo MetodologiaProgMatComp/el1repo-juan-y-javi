@@ -42,15 +42,14 @@ public class MovablePoint extends Point2D {
     }
 
     public String toString() {
-        return "MovablePoint{" +
+        return "MovablePoint[" +
                 "xSpeed=" + xSpeed +
                 ", ySpeed=" + ySpeed +
-                '}';
+                ']';
     }
     public MovablePoint move(){
-        Point2D j=new Point2D();
-        j.setX(j.getX()+xSpeed);
-        j.setY(j.getY()+ySpeed);
+        this.setX(this.getX()+xSpeed);
+        this.setY(this.getY()+ySpeed);
         return this;
     }
 }

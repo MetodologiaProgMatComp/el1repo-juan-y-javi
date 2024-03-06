@@ -1,7 +1,5 @@
 package es.uah.matcomp.mp.e3.ejerciciosclases.Person;
 
-import es.uah.matcomp.mp.e3.ejerciciosclases.Person.Person;
-
 public class Student extends Person {
     private String program;
     private int year;
@@ -39,10 +37,10 @@ public class Student extends Person {
     }
     @Override
     public String toString() {
-        return "Student{" +
-                "program='" + program + '\'' +
+        return "Student[" +
+                "program=" + program +
                 ", year=" + year +
                 ", fee=" + fee +
-                '}';
+                ']';
     }
 }

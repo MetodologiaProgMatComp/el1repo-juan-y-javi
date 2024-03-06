@@ -22,14 +22,13 @@ public class Point3D extends Point2D{
         this.z=z;
     }
     public float[] getXYZ(){
-        float[] array= {getX(),getY(),z};
-        return array;
+        return new float[]{getX(),getY(),z};
     }
 
     @Override
     public String toString() {
-        return "Point3D{" +
+        return "Point3D[" +
                 "z=" + z +
-                '}';
+                ']';
     }
 }

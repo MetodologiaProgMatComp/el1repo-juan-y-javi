@@ -1,8 +1,10 @@
 package es.uah.matcomp.mp.e3.ejerciciosclases.Animal;
 
 public class Dog extends Mammal{
-    public Dog (String name){
-        super(name);
+    private String name;
+    public Dog (String n){
+        super(n);
+        this.name = n;
     }
     public void greets(){
         System.out.println("Woof");
@@ -12,6 +14,6 @@ public class Dog extends Mammal{
     }
     @Override
     public String toString(){
-        return "";
+        return "Dog[Mammal[Animal[name=" + this.name + "]]]";
     }
 }

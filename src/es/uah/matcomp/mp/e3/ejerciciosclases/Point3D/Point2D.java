@@ -30,14 +30,13 @@ public class Point2D {
         this.y=MyY;
     }
     public float[] getXY(){
-        float[]array={x,y};
-        return array;
+        return new float[]{x,y};
     }
 
     public String toString() {
-        return "Point2D{" +
+        return "Point2D[" +
                 "x=" + x +
                 ", y=" + y +
-                '}';
+                ']';
     }
 }

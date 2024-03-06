@@ -1,14 +1,13 @@
 package es.uah.matcomp.mp.e3.ejerciciosclases.Animal;
 
 public class Mammal extends Animal{
-    public Mammal (String name){
-        super(name);
+    private String name;
+    public Mammal (String n){
+        super(n);
+        this.name = n;
     }
 
     public String toString() {
-        Animal j=new Animal();
-        return "Animal{" +
-                "name='" + j.getName() + '\'' +
-                '}';
+        return "Mammal[Animal[name=" + this.name + "]";
     }
 }

@@ -20,7 +20,7 @@ public class ListaSimple {
         this.datos = new ElementoLS[maximo];
     }
 
-    private int add(ElementoLS el) {
+    protected int add(ElementoLS el) {
         int pos = 0;
         for (int i = 0; this.datos[i] != null; i++) {
             pos += 1;

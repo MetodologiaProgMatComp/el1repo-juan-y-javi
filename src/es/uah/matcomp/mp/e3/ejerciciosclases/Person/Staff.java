@@ -1,6 +1,5 @@
 package es.uah.matcomp.mp.e3.ejerciciosclases.Person;
 
-import es.uah.matcomp.mp.e3.ejerciciosclases.Person.Person;
 
 public class Staff extends Person {
     private String school;
@@ -30,9 +29,9 @@ public class Staff extends Person {
 
     @Override
     public String toString() {
-        return "Staff{" +
-                "school='" + school + '\'' +
+        return "Staff[" +
+                "school=" + school +
                 ", pay=" + pay +
-                '}';
+                ']';
     }
 }
