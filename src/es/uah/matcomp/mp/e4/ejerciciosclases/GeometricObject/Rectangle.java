@@ -10,10 +10,10 @@ public class Rectangle implements GeometricObject{
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "Rectangle[" +
                 "width=" + width +
                 ", length=" + length +
-                '}';
+                ']';
     }
     public double getArea(){
         return width*length;

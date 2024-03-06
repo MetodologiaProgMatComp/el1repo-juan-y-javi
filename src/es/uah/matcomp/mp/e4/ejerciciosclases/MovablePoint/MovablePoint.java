@@ -14,12 +14,7 @@ public class MovablePoint implements Movable{
     }
 
     public String toString() {
-        return "MovablePoint{" +
-                "x=" + x +
-                ", y=" + y +
-                ", xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
-                '}';
+        return "("+x+","+y+") speed("+xSpeed+","+ySpeed+")";
     }
     public void moveUp(){
         y+=ySpeed;
